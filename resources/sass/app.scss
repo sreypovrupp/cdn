@@ -1,0 +1,30 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+//Font Awesome Icons
+@import "~admin-lte/plugins/fontawesome-free/css/all.min.css";
+
+//Admin-Lte
+@import "~admin-lte/dist/css/adminlte.css";
+
+//OverlayScrollbars
+@import "~admin-lte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css";
+
+//Khmer Font
+@import url('https://fonts.googleapis.com/css?family=Hanuman|Moul&display=swap');
+
+@import '~sweetalert2/src/variables';
+
+$swal2-background: #fff;
+
+@import '~sweetalert2/src/sweetalert2';
+
+body{
+    font-family: 'Hunuman', "Source Sans Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}

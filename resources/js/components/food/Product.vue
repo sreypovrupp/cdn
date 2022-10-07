@@ -56,6 +56,7 @@
                                                     </li>
                                                 </ul>
                                             </td>
+
                                             <td>
                                                 <strong>{{ pro.name + " - " + pro.name_kh }}</strong>
                                                 <br>
@@ -176,14 +177,18 @@
                     price:"",
                     photo:"",
                     dsc:"",
-                    category:1//,
-                    //_token: token
+                    category:1,
+                    _token: token,
                 })
             }
         },
         mounted() {
             this.getProduct();
             this.chooseImage();
+            //Save Data not need refresh page
+            Fire.$on('onCreated',(page = 1) => {
+                this.getProduct(page);
+            });
         },
         methods:{
             newProduct(){
@@ -200,16 +205,23 @@
                     .catch(err => console.log(err));
             },
             infoProduct(pro){
-                this.method = true
+                this.method = true;
+                this.form.reset();
+                this.form.fill(pro);
+                $('#modal-product').modal('show');
             },
             deleteProduct(id){
 
             },
             editProduct(){
-
+                this.form.put('product/' +this.form.id).then(res =>{
+                    Fire.$emit('onCreated',this.products.current_page);
+                    $('#modal-product').modal('hide');
+                }).catch(err => console.log(err));
             },
             createProduct(){
                 this.form.post('product').then(res =>{
+                    Fire.$emit('onCreated',1);
                     $('#modal-product').modal('hide');
                     console.log(res);
                 }).catch(err => console.log(err));
@@ -230,3 +242,12 @@
         }
     }
 </script>
+
+<style>
+    img.table-avatar,
+    .table-avatar img {
+        border-radius: 50%;
+        display: inline;
+        width: 2.5rem;
+    }
+</style>

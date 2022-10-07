@@ -43,6 +43,7 @@ Route::prefix('product')->group(function (){
     Route::get('/rows', 'Food\ProductController@rows')->name('product.rows');//Pagination
 
     Route::post('/', 'Food\ProductController@save')->name('product.save');
+    Route::put('/{id}', 'Food\ProductController@update')->name('product.update');
 });
 
 

@@ -21,7 +21,7 @@ class ProductController extends Controller
     //
     public function rows()
     {
-        return Product::paginate(5);
+        return Product::orderBy('id','desc')->paginate(5);
     }
     //
     public function save(Request $request){
@@ -32,8 +32,7 @@ class ProductController extends Controller
             'photo' => 'required',
         ]);
         if($request->photo){
-            $name = time().$request->name . '.'
-                . explode('/'.explode(':',substr($request->photo, 0, strpos($request->photo, ";")))[1])[1];
+            $name = now()->format('dmY.His'). '-' . time().$request->name . '.' . explode('/', explode(':', substr($request->photo, 0, strpos($request->photo, ";")))[1])[1];
 
             Image::make($request->photo)->save(public_path('img/food/').$name);
         }
@@ -46,6 +45,34 @@ class ProductController extends Controller
             'dsc' => $request->dsc,
             'category' => $request->category,
         ]);
+
+        return response()->json(['product' => $product]);
+    }
+    //
+    public function update(Request $request, $id){
+        $product = Product::find($id);
+
+        $this->validate($request, [
+            'name' => 'required|string|max:255',
+            'name_kh' => 'required|string|max:255',
+            'price' => 'required|numeric',
+            'photo' => 'required',
+        ]);
+
+        $curPhoto = $product->photo;
+
+        if($request->photo != $curPhoto){
+            $name = now()->format('dmY.His'). '-' . time().$request->name . '.' . explode('/', explode(':', substr($request->photo, 0, strpos($request->photo, ";")))[1])[1];
+            Image::make($request->photo)->save(public_path('img/food/').$name);
+            $request->merge(['photo' => $name]);
+
+            $photo = public_path('img/food/').$curPhoto;
+            if (file_exists($photo)){
+                @unlink($photo);
+            }
+        }
+
+        $product->update($request->all());
 
         return response()->json(['product' => $product]);
     }

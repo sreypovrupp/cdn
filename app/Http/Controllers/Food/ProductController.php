@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Food;
 
+use App\Food\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Food\Product;
 use Intervention\Image\Facades\Image;
+
 
 class ProductController extends Controller
 {
@@ -16,23 +18,30 @@ class ProductController extends Controller
     //
     public function index()
     {
-        return view('food.product');
+        return view('food.product', ['category' => $this->category()]);
     }
     //
     public function rows()
     {
-        return Product::orderBy('id','desc')->paginate(5);
+        return \DB::table('view_product')->orderBy('id','desc')->paginate(5);
+    }
+    //
+    private function category(){
+        return Category::select('id',\DB::raw('concat(name, "-", name_kh) as text'))->get();
     }
     //
     public function save(Request $request){
-        $this->validate($request, [
+        $request->validate([
             'name' => 'required|string|max:255',
             'name_kh' => 'required|string|max:255',
             'price' => 'required|numeric',
-            'photo' => 'required',
+            'photo' => 'required|image64:jpeg,jpg,png,gif,svg',
+            'category' => 'required',
+            'dsc' => 'required',
         ]);
         if($request->photo){
-            $name = now()->format('dmY.His'). '-' . time().$request->name . '.' . explode('/', explode(':', substr($request->photo, 0, strpos($request->photo, ";")))[1])[1];
+            $name = now()->format('dmY.His'). '-' . time().'.'
+                . explode('/', explode(':', substr($request->photo, 0, strpos($request->photo, ";")))[1])[1];
 
             Image::make($request->photo)->save(public_path('img/food/').$name);
         }
@@ -52,17 +61,25 @@ class ProductController extends Controller
     public function update(Request $request, $id){
         $product = Product::find($id);
 
-        $this->validate($request, [
+        $request->validate([
             'name' => 'required|string|max:255',
             'name_kh' => 'required|string|max:255',
             'price' => 'required|numeric',
-            'photo' => 'required',
+            'category' => 'required',
+            //'photo' => 'required|image64:jpeg,jpg,png,gif,svg',
+            'dsc' => 'required',
         ]);
 
         $curPhoto = $product->photo;
 
         if($request->photo != $curPhoto){
-            $name = now()->format('dmY.His'). '-' . time().$request->name . '.' . explode('/', explode(':', substr($request->photo, 0, strpos($request->photo, ";")))[1])[1];
+
+            $request->validate([
+                'photo' => 'required|image64:jpeg,jpg,png,gif,svg'
+            ]);
+
+            $name = now()->format('dmY.His'). '-' . time() . '.'
+                . explode('/', explode(':', substr($request->photo, 0, strpos($request->photo, ";")))[1])[1];
             Image::make($request->photo)->save(public_path('img/food/').$name);
             $request->merge(['photo' => $name]);
 

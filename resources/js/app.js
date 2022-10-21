@@ -1,4 +1,5 @@
 require('./bootstrap');
+require('vue-multiselect/dist/vue-multiselect.min.css');
 import {HasError, AlertError} from 'vform/src/components/bootstrap5';
 import Form from 'vform';
 
@@ -10,6 +11,9 @@ window.Fire = new Vue();
 import VueSweetalert2 from 'vue-sweetalert2';
 
 Vue.use(VueSweetalert2);
+
+import Multiselect from 'vue-multiselect';
+Vue.component('multiselect', Multiselect)
 
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));

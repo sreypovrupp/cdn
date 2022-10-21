@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ffaa76b6-4b10-417d-8607-f93e0e9591e6" name="Default Changelist" comment="">
+    <list default="true" id="ffaa76b6-4b10-417d-8607-f93e0e9591e6" name="Default Changelist" comment="fixed csrf for photo and add function update">
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/tools/Select2.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Food/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Food/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/avatar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/food/07102022.163737-1665160657Noodle.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/food/Product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/food/Product.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/validation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/food/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/food/product.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,8 +135,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../adt" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -163,11 +173,31 @@
       <workItem from="1664847369730" duration="32903000" />
       <workItem from="1664934846978" duration="11086000" />
       <workItem from="1665151207949" duration="5875000" />
+      <workItem from="1665160986831" duration="450000" />
+      <workItem from="1665374374568" duration="2740000" />
+      <workItem from="1665712510598" duration="23765000" />
+      <workItem from="1665973973273" duration="33000" />
+      <workItem from="1665991244982" duration="4782000" />
+      <workItem from="1666057159577" duration="9704000" />
+      <workItem from="1666142876303" duration="4684000" />
+      <workItem from="1666238183127" duration="60000" />
     </task>
+    <task id="LOCAL-00001" summary="fixed csrf for photo and add function update">
+      <created>1665161383739</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1665161383739</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fixed csrf for photo and add function update" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed csrf for photo and add function update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="654" y="242" width="583" height="331" key="#File_Watchers" timestamp="1664850405261">
@@ -186,22 +216,31 @@
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="452" y="39" key="#phpunit.xml/0.0.1536.816@0.0.1536.816" timestamp="1665151215048" />
-    <state x="438" y="187" key="EditFileWatcherDialog" timestamp="1664849488785">
+    <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1665741224812">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="438" y="187" key="EditFileWatcherDialog/0.0.1536.816/0.-1080.1920.1032@0.0.1536.816" timestamp="1664849488785" />
-    <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1664960914699">
+    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.816/0.-1080.1920.1032@0.0.1536.816" timestamp="1665741224812" />
+    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.816@0.0.1536.816" timestamp="1665161381400" />
+    <state x="438" y="187" key="EditFileWatcherDialog" timestamp="1665730290257">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816/0.-1080.1920.1032@0.0.1536.816" timestamp="1664960914699" />
+    <state x="438" y="187" key="EditFileWatcherDialog/0.0.1536.816/0.-1080.1920.1032@0.0.1536.816" timestamp="1665730290257" />
+    <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1666238197615">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816/0.-1080.1920.1032@0.0.1536.816" timestamp="1666238197615" />
+    <state x="622" y="111" key="RollbackChangesDialog" timestamp="1665741176572">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="622" y="111" key="RollbackChangesDialog/0.0.1536.816/0.-1080.1920.1032@0.0.1536.816" timestamp="1665741176572" />
     <state x="425" y="185" key="run.anything.popup" timestamp="1664811957750">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="425" y="185" key="run.anything.popup/0.0.1536.816@0.0.1536.816" timestamp="1664811957750" />
-    <state x="46" y="137" width="672" height="678" key="search.everywhere.popup" timestamp="1665157730524">
+    <state x="46" y="137" width="672" height="678" key="search.everywhere.popup" timestamp="1665730491366">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="46" y="137" width="672" height="678" key="search.everywhere.popup/0.0.1536.816/0.-1080.1920.1032@0.0.1536.816" timestamp="1664851145112" />
-    <state x="46" y="137" width="672" height="678" key="search.everywhere.popup/0.0.1536.816@0.0.1536.816" timestamp="1665157730524" />
+    <state x="46" y="137" width="672" height="678" key="search.everywhere.popup/0.0.1536.816/0.-1080.1920.1032@0.0.1536.816" timestamp="1665730491366" />
+    <state x="46" y="137" width="672" height="678" key="search.everywhere.popup/0.0.1536.816@0.0.1536.816" timestamp="1665160988570" />
   </component>
 </project>

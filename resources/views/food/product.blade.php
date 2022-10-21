@@ -7,5 +7,5 @@
 
 
 @section('content')
-    <food_product></food_product>
+    <food_product :category="{{ $category }}"></food_product>
 @endsection
